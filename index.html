@@ -1,0 +1,137 @@
+To create a comprehensive Skilled Independent Visa (subclass 189) points calculator that encompasses all the criteria outlined by the Australian Department of Home Affairs, you can use the following HTML and JavaScript code. This code includes all the specified categories and calculates the total points based on user inputs.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Skilled Independent Visa (Subclass 189) Points Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        label { display: block; margin-top: 10px; }
+        select, input { margin-top: 5px; }
+        button { margin-top: 20px; padding: 10px 15px; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Skilled Independent Visa (Subclass 189) Points Calculator</h1>
+    <form id="pointsForm">
+        <label for="age">Age:</label>
+        <select id="age" name="age">
+            <option value="0">Select your age</option>
+            <option value="25">18-24 years</option>
+            <option value="30">25-32 years</option>
+            <option value="25">33-39 years</option>
+            <option value="15">40-44 years</option>
+            <option value="0">45-49 years</option>
+            <option value="0">50 years and above</option>
+        </select>
+
+        <label for="english">English Language Skills:</label>
+        <select id="english" name="english">
+            <option value="0">Select your proficiency</option>
+            <option value="20">Superior</option>
+            <option value="10">Proficient</option>
+            <option value="0">Competent</option>
+        </select>
+
+        <label for="overseasExperience">Overseas Skilled Employment (outside Australia):</label>
+        <select id="overseasExperience" name="overseasExperience">
+            <option value="0">Select years of experience</option>
+            <option value="0">Less than 3 years</option>
+            <option value="5">3-4 years</option>
+            <option value="10">5-7 years</option>
+            <option value="15">8 years and above</option>
+        </select>
+
+        <label for="ausExperience">Australian Skilled Employment (in Australia):</label>
+        <select id="ausExperience" name="ausExperience">
+            <option value="0">Select years of experience</option>
+            <option value="0">Less than 1 year</option>
+            <option value="5">1-2 years</option>
+            <option value="10">3-4 years</option>
+            <option value="15">5-7 years</option>
+            <option value="20">8 years and above</option>
+        </select>
+
+        <label for="education">Educational Qualifications:</label>
+        <select id="education" name="education">
+            <option value="0">Select your qualification</option>
+            <option value="20">Doctorate</option>
+            <option value="15">Bachelor's or Master's degree</option>
+            <option value="10">Diploma or trade qualification</option>
+            <option value="10">Award or qualification recognized by the relevant assessing authority</option>
+        </select>
+
+        <label for="specialistEducation">Specialist Education Qualification:</label>
+        <select id="specialistEducation" name="specialistEducation">
+            <option value="0">Select an option</option>
+            <option value="10">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="ausStudy">Australian Study Requirement:</label>
+        <select id="ausStudy" name="ausStudy">
+            <option value="0">Select an option</option>
+            <option value="5">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="profYear">Professional Year in Australia:</label>
+        <select id="profYear" name="profYear">
+            <option value="0">Select an option</option>
+            <option value="5">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="communityLanguage">Credentialled Community Language:</label>
+        <select id="communityLanguage" name="communityLanguage">
+            <option value="0">Select an option</option>
+            <option value="5">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="regionalStudy">Study in Regional Australia:</label>
+        <select id="regionalStudy" name="regionalStudy">
+            <option value="0">Select an option</option>
+            <option value="5">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="partnerSkills">Partner Skills:</label>
+        <select id="partnerSkills" name="partnerSkills">
+            <option value="0">Select an option</option>
+            <option value="10">Partner has competent English and suitable skills assessment</option>
+            <option value="5">Partner has competent English</option>
+            <option value="10">Single applicant</option>
+            <option value="0">Partner does not meet above criteria</option>
+        </select>
+
+        <button type="button" onclick="calculatePoints()">Calculate Points</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function calculatePoints() {
+            const agePoints = parseInt(document.getElementById('age').value);
+            const englishPoints = parseInt(document.getElementById('english').value);
+            const overseasExperiencePoints = parseInt(document.getElementById('overseasExperience').value);
+            const ausExperiencePoints = parseInt(document.getElementById('ausExperience').value);
+            const educationPoints = parseInt(document.getElementById('education').value);
+            const specialistEducationPoints = parseInt(document.getElementById('specialistEducation').value);
+            const ausStudyPoints = parseInt(document.getElementById('ausStudy').value);
+            const profYearPoints = parseInt(document.getElementById('profYear').value);
+            const communityLanguagePoints = parseInt(document.getElementById('communityLanguage').value);
+            const regionalStudyPoints = parseInt(document.getElementById('regionalStudy').value);
+            const partnerSkillsPoints = parseInt(document.getElementById('partnerSkills').value);
+
+            const totalPoints = agePoints + englishPoints + overseasExperiencePoints + ausExperiencePoints +
+                                educationPoints + specialistEducationPoints + ausStudyPoints + profYearPoints +
+                                communityLanguagePoints + regionalStudyPoints + partnerSkillsPoints;
+
+            document.getElementById('result').innerText = `Your total points: ${totalPoints}`;
+        }
+    </script>
+</body 
